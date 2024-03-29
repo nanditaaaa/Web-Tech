@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Calculator </title> 
+    <style> 
+    body{ 
+    text-align:centre; 
+    } 
+    h1{
+        text-align: center;
+        margin-bottom: 200px;
+    }
+    #screen{
+        text-align: center;
+        width: 50%;
+        margin: auto;
+        background-color:powderblue;
+        height: 40vh;
+        padding-top: 80px;
+    }
+    #oper{
+        padding: 50px;
+        width: 10%;
+        margin: auto;
+    }
+    #oper div{
+        padding: 10px;
+        border: 2px solid black;
+    }
+    </style> 
+    <script>
+        function calcSum(){
+        let box1 = document.getElementById("box1").value;
+        let box2 = document.getElementById("box2").value;
+        let sum = Number(box1) + Number(box2);
+        document.getElementById("box3").value = sum;
+        }
+        function calcSubs(){
+        let box1 = document.getElementById("box1").value;
+        let box2 = document.getElementById("box2").value;
+        let substraction = Number(box1) - Number(box2);
+        document.getElementById("box3").value = substraction;
+        }
+        function calcmul(){
+        let box1 = document.getElementById("box1").value;
+        let box2 = document.getElementById("box2").value;
+        let multiply = Number(box1) * Number(box2);
+        document.getElementById("box3").value = multiply;
+        }
+        function calcdiv(){
+        let box1 = document.getElementById("box1").value;
+        let box2 = document.getElementById("box2").value;
+        if(box2!=0){
+        let division = Number(box1) / Number(box2);
+        document.getElementById("box3").value = division;
+        }
+        else {
+            document.getElementById("box3").value = "The denominator should not be zero";
+        }
+    }
+        </script>
+</head> 
+<body>
+    <h1> Calculator Program in JavaScript </h1>  
+    <div id="screen">
+        <form name = "form1">  
+                
+            1st number is:  <input type="text" id="box1" ><br> <br>  
+            2nd number is:  <input id = "box2" type ="text" > <br> <br>  
+            result is:  <input id = "box3" type ="text" > <br> <br>  
+            
+            </form>  
+            <div id="oper" style="display: flex;"> 
+                <div onclick="calcSum()">+</div>
+                <div onclick="calcSubs()">-</div>
+                <div onclick="calcmul()">*</div>
+                <div onclick="calcdiv()">/</div>
+            </div>
+    </div>
+    </body>  
+</html> 
