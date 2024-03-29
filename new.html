@@ -1,0 +1,160 @@
+<!DOCTYPE html>    
+    <html>    
+    <head>    
+        <title>Reg Form</title>    
+        <style type="text/css">    
+            body{    
+                font-family: Calibri;    
+            }    
+            input[type="text"] {    
+                width: 250px;    
+            }    
+            input[type="submit"], input[type="reset"] {    
+                width: 77px;    
+                height: 27px;    
+                position: relative;left: 180px;    
+            }    
+            form{    
+                text-align: center;    
+                font-family: Calibri;    
+                font-size: 20px;    
+                border: 3px solid black;    
+                width: 600px;    
+                margin: 20px auto;  
+                background-color:Azure;  
+            }    
+            td {    
+                padding: 10px;    
+            }    
+            td:first-child {    
+                text-align: right;    
+                font-weight: bold;    
+            }    
+            td:last-child {    
+                text-align: left;    
+        
+        </style>    
+        <script>    
+            function validate() {    
+                var fname = document.reg_form.fname;    
+                var fid = document.reg_form.fid;    
+		    var dob = document.reg_form.dob;    
+                var gender = document.reg_form.gender;    
+                var email = document.reg_form.email;    
+                var mobile = document.reg_form.mobile;    
+                var address = document.reg_form.address; 
+                var pincode = document.reg form.pincode;
+        
+                if (fname.value.length <= 0) {    
+                    alert("Name is required");    
+                    fname.focus();    
+                    return false;    
+                }    
+                if (fid.value.length <= 0) {    
+                    alert("Faculty id is required");    
+                    fid.focus();    
+                    return false;    
+                }    
+		     if (dob.value.length <= 0) {    
+                    alert("DOB is required");    
+                    dob.focus();    
+                    return false;    
+                }    
+                if (gender.value.length <= 0) {    
+                    alert("Gender is required");    
+                    gender.focus();    
+                    return false;    
+                }    
+                if (email.value.length <= 0) {    
+                    alert("Email Id is required");    
+                    email.focus();    
+                    return false;    
+                }    
+                if (mobile.value.length <= 0) {    
+                    alert("Mobile number is required");    
+                    mobile.focus();    
+                    return false;    
+                }       
+		    
+                if (address.value.length <= 0) {    
+                    alert("Address is required");    
+                    address.focus();    
+                    return false;    
+                }    
+                return false;    
+            }    
+             if (pincode.value.length <= 0) {    
+                    alert("pin code is required");    
+                    pincode.focus();    
+                    return false;    
+                }        
+        </script>    
+    </head>    
+    <body>    
+         
+        <form method="" action="" name="reg_form" onsubmit="return validate()">    
+            <h2>Registration Form</h2>    
+            <table>    
+                <tr>    
+                    <td><label>Faculty Name: </label></td>    
+                    <td>    
+                        <input type="text" name="fname" placeholder="Faculty Name" required
+       minlength="4" maxlength="20" pattern="[A-Z]{1}[a-z]+" title="First letter should be capital">    
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td><label>Faculty ID:</label></td>    
+                    <td>    
+                        <input type="text" name="fid" placeholder="Faculty ID" pattern="[0-9]{2}[A-Za-z]{3}5[0-9]{2}" required>    
+                    </td>    
+                </tr>   
+		     <tr>    
+                    <td><label>DOB:</label></td>    
+                    <td>    
+                        <input type="text" name="dob" placeholder="date of birth" pattern="[0-31]{2}/[1-12]{2}/[1955-2006]{4}" required>    
+                    </td>    
+                </tr>   
+
+                <tr>    
+                    <td><label>Address: </label></td>    
+                    <td>    
+                        <input type="textarea" size="50" name="address" placeholder="Address" required>    
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td><label>Gender: </label></td>    
+                    <td>    
+                        <input type="radio" name="gender" value="male" required>Male    
+                        <input type="radio" name="gender" value="femele" required>Female    
+				<input type="radio" name="gender" value="other" required>Other 
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td><label>Email Id: </label></td>    
+                    <td>    
+                        <input type="text" name="email" placeholder="example@gmail.com" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"  title="email should not contain any special characters!" required>    
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td><label>Mobile: </label></td>    
+                    <td>    
+				<input type="text" name="mobile" pattern="/[8-9]{1}[0-9]{9}+" 
+       title="Phone number with 8-9 and remaing 9 digit with 0-9" placeholder="Mobile No." required>
+                     </td>    
+                </tr>   
+                <tr>    
+                    <td><label>Pin Code: </label></td>    
+                    <td>    
+                        <input type="text" name="pincode" placeholder="pincode" pattern="[1-9]{1}[0-9]{5}" required>    
+                    </td>    
+                </tr>       
+                <tr>    
+                    <td>    
+                        <input type="submit" name="submit" value="Submit">    
+                           
+                    </td>    
+                </tr>             
+            </table>    
+        </form>    
+    </body>    
+    </html>
